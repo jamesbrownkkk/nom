@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NOMAD OPERATIONS LTD — UK management consultancy focused on practical, professional business support." />
+  <title>NOMAD OPERATIONS LTD | Management Consultancy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#10202b;
+      --muted:#62727c;
+      --cream:#f6f5f0;
+      --white:#fff;
+      --line:#dde3e5;
+      --accent:#c7a35a;
+      --accent-dark:#9d7a35;
+      --dark:#0b1820;
+      --shadow:0 24px 60px rgba(16,32,43,.10);
+      --radius:20px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"DM Sans",Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.65}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1160px,92%);margin:auto}
+    header{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(255,255,255,.92);backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(221,227,229,.75)
+    }
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .mark{width:40px;height:40px;border:2px solid var(--ink);display:grid;place-items:center;font-weight:800;letter-spacing:-2px}
+    .brand-text{font-family:Manrope,sans-serif;font-weight:800;letter-spacing:.08em;font-size:15px}
+    .links{display:flex;gap:32px;align-items:center;font-size:14px;font-weight:600}
+    .links a{color:#43525b}.links a:hover{color:var(--ink)}
+    .nav-cta{padding:12px 18px;background:var(--ink);color:#fff!important;border-radius:10px}
+    .hero{padding:170px 0 110px;background:linear-gradient(135deg,#f8f7f2 0%,#fff 55%,#eef2f1 100%);overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+    .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;font-weight:800;color:var(--accent-dark);margin-bottom:20px}
+    h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.12}
+    h1{font-size:clamp(46px,6vw,78px);letter-spacing:-.055em;max-width:760px}
+    .hero p{margin:26px 0 32px;color:var(--muted);font-size:18px;max-width:630px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:14px 21px;border-radius:10px;font-weight:700;font-size:14px;display:inline-flex;align-items:center;gap:9px}
+    .btn-primary{background:var(--ink);color:#fff}
+    .btn-secondary{border:1px solid var(--line);background:#fff}
+    .hero-card{background:var(--dark);color:#fff;border-radius:28px;padding:34px;box-shadow:var(--shadow);position:relative}
+    .hero-card:before{content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.13);border-radius:20px;pointer-events:none}
+    .card-label{font-size:11px;text-transform:uppercase;letter-spacing:.17em;color:#bfc8cc}
+    .hero-card h3{font-size:30px;margin:55px 0 20px}
+    .company-number{font-size:14px;color:#cbd3d6;padding-top:22px;border-top:1px solid rgba(255,255,255,.14)}
+    section{padding:100px 0}
+    .section-head{max-width:700px;margin-bottom:48px}
+    .section-head h2{font-size:clamp(34px,4vw,52px);letter-spacing:-.04em}
+    .section-head p{color:var(--muted);margin-top:16px}
+    .about{background:var(--cream)}
+    .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}
+    .statement{font-family:Manrope;font-size:31px;letter-spacing:-.03em;line-height:1.25}
+    .facts{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .fact{background:#fff;border:1px solid var(--line);padding:24px;border-radius:16px}
+    .fact small{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}
+    .fact strong{font-size:16px}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{padding:30px;border:1px solid var(--line);border-radius:18px;min-height:230px;transition:.25s}
+    .service:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .service-num{font-family:Manrope;color:var(--accent-dark);font-weight:800;font-size:13px}
+    .service h3{font-size:23px;margin:42px 0 12px}
+    .service p{color:var(--muted);font-size:14px}
+    .trust{background:var(--dark);color:#fff}
+    .trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .trust h2{font-size:48px;letter-spacing:-.045em}
+    .trust p{color:#bac4c8;margin-top:18px}
+    .pill-list{display:grid;gap:12px}
+    .pill{padding:17px 20px;border:1px solid rgba(255,255,255,.13);border-radius:12px;background:rgba(255,255,255,.035)}
+    .pill strong{display:block;margin-bottom:3px}.pill span{font-size:13px;color:#aeb9bd}
+    .contact{background:var(--cream)}
+    .contact-box{background:#fff;border:1px solid var(--line);border-radius:24px;padding:50px;display:grid;grid-template-columns:1fr 1fr;gap:50px}
+    .contact h2{font-size:44px;letter-spacing:-.04em}
+    .contact p{color:var(--muted);margin-top:15px}
+    .contact-info{display:grid;gap:18px}
+    .contact-item{padding:18px 0;border-bottom:1px solid var(--line)}
+    .contact-item small{display:block;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-size:11px;margin-bottom:4px}
+    footer{background:#071219;color:#aab5ba;padding:30px 0}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:13px}
+    .footer-brand{color:#fff;font-weight:800;letter-spacing:.08em}
+    @media(max-width:850px){
+      .links a:not(.nav-cta){display:none}
+      .hero-grid,.about-grid,.trust-grid,.contact-box{grid-template-columns:1fr;gap:35px}
+      .services-grid{grid-template-columns:1fr}
+      .hero{padding-top:130px}
+      section{padding:75px 0}
+      .facts{grid-template-columns:1fr}
+      .contact-box{padding:30px}
+      .trust h2{font-size:38px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#top" aria-label="NOMAD OPERATIONS LTD home">
+        <span class="mark">N</span>
+        <span class="brand-text">NOMAD OPERATIONS LTD</span>
+      </a>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#services">Focus</a>
+        <a href="#company">Company</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Management Consultancy · United Kingdom</div>
+        <h1>Clear thinking for better business operations.</h1>
+        <p>NOMAD OPERATIONS LTD is a UK-based private limited company providing management consultancy activities other than financial management.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#contact">Start a conversation →</a>
+          <a class="btn btn-secondary" href="#about">Learn about us</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-label">Company profile</div>
+        <h3>NOMAD<br>OPERATIONS LTD</h3>
+        <div class="company-number">Company No. <strong>16892249</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">About the company</div>
+        <h2>Professional. Practical. Focused on operations.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="statement">We support organisations through structured management thinking, operational clarity and practical business guidance.</div>
+        <div class="facts">
+          <div class="fact"><small>Status</small><strong>Active</strong></div>
+          <div class="fact"><small>Company type</small><strong>Private limited Company</strong></div>
+          <div class="fact"><small>Incorporated</small><strong>4 December 2025</strong></div>
+          <div class="fact"><small>SIC</small><strong>70229 — Management consultancy activities other than financial management</strong></div>
+          <div class="fact"><small>Registered office</small><strong>79 Hatch Lane, Basingstoke, United Kingdom, RG24 7EE</strong></div>
+          <div class="fact"><small>Company number</small><strong>16892249</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Our focus</div>
+        <h2>Management consultancy with an operational mindset.</h2>
+        <p>The areas below reflect the company’s management-consultancy positioning without overstating specific services not listed in the official company information.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service">
+          <div class="service-num">01</div>
+          <h3>Business Analysis</h3>
+          <p>Structured review of business activities, challenges and opportunities to support better management decisions.</p>
+        </article>
+        <article class="service">
+          <div class="service-num">02</div>
+          <h3>Operational Thinking</h3>
+          <p>Practical approaches to understanding workflows, improving clarity and supporting effective day-to-day operations.</p>
+        </article>
+        <article class="service">
+          <div class="service-num">03</div>
+          <h3>Management Support</h3>
+          <p>Professional consultancy designed to help organisations assess priorities and move forward with greater confidence.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="company" class="trust">
+    <div class="container trust-grid">
+      <div>
+        <div class="eyebrow">Company information</div>
+        <h2>A UK company built around responsible business consultancy.</h2>
+        <p>NOMAD OPERATIONS LTD is registered in the United Kingdom and operates as an active private limited company.</p>
+      </div>
+      <div class="pill-list">
+        <div class="pill"><strong>Registered office</strong><span>79 Hatch Lane, Basingstoke, United Kingdom, RG24 7EE</span></div>
+        <div class="pill"><strong>Company number</strong><span>16892249</span></div>
+        <div class="pill"><strong>Business classification</strong><span>70229 — Management consultancy activities other than financial management</span></div>
+        <div class="pill"><strong>First accounts</strong><span>Made up to 31 December 2026 · Due 4 September 2027</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div>
+          <div class="eyebrow">Get in touch</div>
+          <h2>Let’s discuss your business.</h2>
+          <p>For consultancy enquiries, please contact NOMAD OPERATIONS LTD using the company information below.</p>
+        </div>
+        <div class="contact-info">
+          <div class="contact-item"><small>Company</small><strong>NOMAD OPERATIONS LTD</strong></div>
+          <div class="contact-item"><small>Company number</small><strong>16892249</strong></div>
+          <div class="contact-item"><small>Registered office</small><strong>79 Hatch Lane, Basingstoke, United Kingdom, RG24 7EE</strong></div>
+          <div class="contact-item"><small>Business activity</small><strong>Management consultancy activities other than financial management</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div class="footer-brand">NOMAD OPERATIONS LTD</div>
+    <div>Company No. 16892249 · United Kingdom</div>
+    <div>© 2026 NOMAD OPERATIONS LTD</div>
+  </div>
+</footer>
+</body>
+</html>
